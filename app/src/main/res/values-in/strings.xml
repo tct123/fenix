@@ -16,6 +16,12 @@
     <!-- Placeholder text shown in the search bar before a user enters text -->
     <string name="search_hint">Cari atau masukkan alamat</string>
 
+    <!-- Placeholder text shown in search bar when using history search -->
+    <string name="history_search_hint">Riwayat pencarian</string>
+    <!-- Placeholder text shown in search bar when using bookmarks search -->
+    <string name="bookmark_search_hint">Cari markah</string>
+    <!-- Placeholder text shown in search bar when using tabs search -->
+    <string name="tab_search_hint">Cari tab</string>
     <!-- Placeholder text shown in the search bar when using application search engines -->
     <string name="application_search_hint">Masukkan istilah pencarian</string>
     <!-- No Open Tabs Message Description -->
@@ -41,9 +47,7 @@
 
     <!-- Home - Recently saved bookmarks -->
     <!-- Title for the home screen section with recently saved bookmarks. -->
-    <string name="recent_bookmarks_title">Markah terbaru</string>
-    <!-- Title for the button which navigates the user to show all of their saved bookmarks. -->
-    <string moz:removedIn="101" name="recently_saved_show_all" tools:ignore="UnusedResources">Tampilkan semua</string>
+    <string name="recently_saved_title">Baru saja disimpan</string>
     <!-- Content description for the button which navigates the user to show all of their saved bookmarks. -->
     <string name="recently_saved_show_all_content_description_2">Tampilkan semua markah tersimpan</string>
 
@@ -63,10 +67,14 @@
 
     <!-- Private mode shortcut "contextual feature recommendation" (CFR) -->
     <!-- Text for the main message -->
-    <string name="cfr_message">Tambahkan pintasan untuk membuka tab privat dari layar Beranda Anda.</string>
+    <string name="cfr_message" moz:removedIn="109" tools:ignore="UnusedResources">Tambahkan pintasan untuk membuka tab privat dari layar Beranda Anda.</string>
+    <!-- Text for the Private mode shortcut CFR message for adding a private mode shortcut to open private tabs from the Home screen -->
+    <string name="private_mode_cfr_message">Luncurkan tab pribadi berikutnya dengan sekali ketuk.</string>
     <!-- Text for the positive button -->
-    <string name="cfr_pos_button_text">Tambahkan pintasan</string>
-    <!-- Text for the negative button -->
+    <string name="cfr_pos_button_text" moz:removedIn="109" tools:ignore="UnusedResources">Tambahkan pintasan</string>
+    <!-- Text for the positive button to accept adding a Private Browsing shortcut to the Home screen -->
+    <string name="private_mode_cfr_pos_button_text">Tambahkan ke Beranda</string>
+    <!-- Text for the negative button to decline adding a Private Browsing shortcut to the Home screen -->
     <string name="cfr_neg_button_text">Tidak, terima kasih</string>
 
     <!-- Open in App "contextual feature recommendation" (CFR) -->
@@ -76,6 +84,15 @@
     <string name="open_in_app_cfr_positive_button_text">Buka pengaturan</string>
     <!-- Text for the negative action button -->
     <string name="open_in_app_cfr_negative_button_text">Tutup</string>
+
+    <!-- Content description for close button used in "contextual feature recommendation" (CFR) popups -->
+    <string name="cfr_dismiss_button_default_content_description">Tutup</string>
+
+    <!-- Total cookie protection "contextual feature recommendation" (CFR) -->
+    <!-- Text for the message displayed in the contextual feature recommendation popup promoting the total cookie protection feature. -->
+    <string name="tcp_cfr_message">Fitur privasi kami yang paling kuat dan juga mengisolasi pelacak lintas situs.</string>
+    <!-- Text displayed that links to website containing documentation about the "Total cookie protection" feature. -->
+    <string name="tcp_cfr_learn_more">Pelajari tentang Perlindungan Kuki Total</string>
 
     <!-- Text for the info dialog when camera permissions have been denied but user tries to access a camera feature. -->
     <string name="camera_permissions_needed_message">Akses kamera diperlukan. Buka pengaturan Android, ketuk izin, dan ketuk izinkan.</string>
@@ -122,18 +139,13 @@
 
     <!-- Content description for the button which navigates the user to show all recent tabs in the tabs tray. -->
     <string name="recent_tabs_show_all_content_description_2">Tampilkan tombol semua tab terbaru</string>
-    <!-- Title for showing a group item in the 'Jump back in' section of the new tab
-        The first parameter is the search term that the user used. (for example: your search for "cat")-->
-    <string name="recent_tabs_search_term">Pencarian Anda untuk \&quot;%1$s\&quot;</string>
-
-    <!-- Text for the number of tabs in a group in the 'Jump back in' section of the new tab
-        %d is a placeholder for the number of sites in the group. This number will always be more than one. -->
-    <string name="recent_tabs_search_term_count_2">%d situs</string>
 
     <!-- Text for button in synced tab card that opens synced tabs tray -->
     <string name="recent_tabs_see_all_synced_tabs_button_text">Lihat semua tab tersinkron</string>
     <!-- Accessibility description for device icon used for recent synced tab -->
     <string name="recent_tabs_synced_device_icon_content_description">Perangkat yang disinkronkan</string>
+    <!-- Text for the dropdown menu to remove a recent synced tab from the homescreen -->
+    <string name="recent_synced_tab_menu_item_remove">Hapus</string>
     <!-- Text for the menu button to remove a grouped highlight from the user's browsing history
          in the Recently visited section -->
     <string name="recent_tab_menu_item_remove">Hapus</string>
@@ -159,6 +171,8 @@
     <string name="browser_menu_stop">Hentikan</string>
     <!-- Browser menu button that opens the addon manager -->
     <string name="browser_menu_add_ons">Pengaya</string>
+    <!-- Browser menu button that opens account settings -->
+    <string name="browser_menu_account_settings">Info akun</string>
     <!-- Text displayed when there are no add-ons to be shown -->
     <string name="no_add_ons">Tidak ada pengaya di sini</string>
     <!-- Browser menu button that sends a user to help articles -->
@@ -251,27 +265,47 @@
     <!-- Menu option in the search selector menu to open the search settings -->
     <string name="search_settings_menu_item">Setelan pencarian</string>
 
+    <!-- Header text for the search selector menu -->
+    <string name="search_header_menu_item" moz:RemovedIn="109" tools:ignore="UnusedResources">Kali ini temukan dengan:</string>
+
+    <!-- Header text for the search selector menu -->
+    <string name="search_header_menu_item_2">Kali ini, cari di:</string>
+
     <!-- Home onboarding -->
-    <!-- Onboarding home screen dialog title text. The first parameter is the name of the application.-->
-    <string name="onboarding_home_screen_title_3">Yang baru di %1$s</string>
-    <!-- Onboarding home screen dialog description text. -->
-    <string name="onboarding_home_screen_description_2">Sekarang lebih mudah untuk melanjutkan dari sesi sebelumnya.</string>
-    <!-- Onboarding home screen dialog title text for the home section. The first parameter is the name of the application.-->
-    <string name="onboarding_home_screen_section_home_title_3">Beranda %1$s yang dipersonalisasi</string>
-    <!-- Onboarding home screen dialog description text for the home section. -->
-    <string name="onboarding_home_screen_section_home_description_2">Lompat ke tab terbuka, markah, dan riwayat penjelajahan Anda.</string>
-    <!-- Onboarding home screen dialog description text for the tab tray section. -->
-    <string name="onboarding_home_screen_section_cleaner_tab_tray_title_2">Tab bersih dan terorganisir</string>
+    <!-- Onboarding home screen popup dialog, shown on top of the Jump back in section. -->
+    <string name="onboarding_home_screen_jump_back_contextual_hint_2">Temui beranda pribadi Anda. Tab, markah, dan hasil pencarian terkini akan muncul di sini.</string>
+    <!-- Home onboarding dialog welcome screen title text. -->
+    <string name="onboarding_home_welcome_title_2">Selamat datang di Internet yang lebih pribadi</string>
+    <!-- Home onboarding dialog welcome screen description text. -->
+    <string name="onboarding_home_welcome_description">Lebih banyak warna. Privasi yang lebih baik. Komitmen yang sama pada masyarakat di atas laba.</string>
+    <!-- Home onboarding dialog sign into sync screen title text. -->
+    <string name="onboarding_home_sync_title_3">Beralih layar lebih mudah dari sebelumnya</string>
+    <!-- Home onboarding dialog sign into sync screen description text. -->
+    <string name="onboarding_home_sync_description">Lanjutkan dari bagian terakhir yang Anda tinggalkan dengan tab dari perangkat lain sekarang di beranda Anda.</string>
+    <!-- Text for the button to continue the onboarding on the home onboarding dialog. -->
+    <string name="onboarding_home_get_started_button">Memulai</string>
+    <!-- Text for the button to navigate to the sync sign in screen on the home onboarding dialog. -->
+    <string name="onboarding_home_sign_in_button">Masuk</string>
+    <!-- Text for the button to skip the onboarding on the home onboarding dialog. -->
+    <string name="onboarding_home_skip_button">Lewati</string>
 
-    <!-- Onboarding home screen dialog description text for the tab tray section. -->
-    <string name="onboarding_home_screen_section_cleaner_tab_tray_description_2">Hilangkan tab berantakan dengan tata letak baru dan tab yang menutup otomasi.</string>
-    <!-- Onboarding home screen dialog description text for the history section. -->
-    <string name="onboarding_home_screen_section_useful_history_title_2">Pencarian terkini</string>
-    <!-- Onboarding home screen dialog description text for the history section. -->
-    <string name="onboarding_home_screen_section_useful_history_description_2">Kunjungi kembali penelusuran terkini dari beranda dan tab Anda.</string>
+    <!-- Onboarding home screen sync popup dialog message, shown on top of Recent Synced Tabs in the Jump back in section. -->
+    <string name="sync_cfr_message">Tab Anda sedang disinkronkan! Lanjutkan di mana Anda tinggalkan di perangkat Anda yang lain.</string>
 
-    <!-- Onboarding home screen popup dialog, shown on top of the Jump back in section. Firefox is intentionally hardcoded. -->
-    <string name="onboarding_home_screen_jump_back_contextual_hint" tools:ignore="UnusedResources">Sekarang, halaman beranda Firefox yang dipersonalisasi memudahkan Anda melanjutkan pekerjaan dari sesi sebelumnya. Temukan tab, markah, dan hasil pencarian Anda yang terkini.</string>
+    <!-- Content description (not visible, for screen readers etc.): Close button for the home onboarding dialog -->
+    <string name="onboarding_home_content_description_close_button">Tutup</string>
+
+    <!-- Notification pre-permission dialog -->
+    <!-- Enable notification pre permission dialog title
+        The first parameter is the name of the app defined in app_name (for example: Fenix) -->
+    <string name="onboarding_home_enable_notifications_title">Notifikasi membantu Anda lakukan lebih banyak hal dengan %s</string>
+    <!-- Enable notification pre permission dialog description with rationale
+        The first parameter is the name of the app defined in app_name (for example: Fenix) -->
+    <string name="onboarding_home_enable_notifications_description">Sinkronkan tab Anda antar perangkat, kelola unduhan, dapatkan kiat tentang memanfaatkan perlindungan privasi %s, dan banyak lagi.</string>
+    <!-- Text for the button to request notification permission on the device -->
+    <string name="onboarding_home_enable_notifications_positive_button">Lanjutkan</string>
+    <!-- Text for the button to not request notification permission on the device and dismiss the dialog -->
+    <string name="onboarding_home_enable_notifications_negative_button">Jangan sekarang</string>
 
     <!-- Search Widget -->
     <!-- Content description for searching with a widget. The first parameter is the name of the application.-->
@@ -324,12 +358,81 @@
     <string name="preferences_add_private_browsing_shortcut">Tambahkan pintasan penjelajahan pribadi</string>
     <!-- Preference for enabling "HTTPS-Only" mode -->
     <string name="preferences_https_only_title">Mode Hanya HTTPS</string>
+
+    <!-- Preference for removing cookie/consent banners from sites automatically. See reduce_cookie_banner_summary for additional context. -->
+    <string name="preferences_cookie_banner_reduction">Pengurangan Spanduk Kuki</string>
+    <!-- Preference for rejecting or removing as many cookie/consent banners as possible on sites. See reduce_cookie_banner_summary for additional context. -->
+    <string name="reduce_cookie_banner_option">Kurangi spanduk kuki</string>
+    <!-- Summary of cookie banner handling preference if the setting disabled is set to off -->
+    <string name="reduce_cookie_banner_option_off">Nonaktif</string>
+    <!-- Summary of cookie banner handling preference if the setting enabled is set to on -->
+    <string name="reduce_cookie_banner_option_on">Aktif</string>
+    <!-- Summary for the preference for rejecting all cookies whenever possible. -->
+    <string name="reduce_cookie_banner_summary" moz:RemovedIn="110" tools:ignore="UnusedResources">Firefox secara otomatis mencoba menolak permintaan kuki di spanduk kuki. Jika opsi menolak tidak tersedia, Firefox akan menerima semua kuki untuk menutup spanduk tersebut.</string>
+
+    <!-- Summary for the preference for rejecting all cookies whenever possible. The first parameter is the application name -->
+    <string name="reduce_cookie_banner_summary_1">%1$s secara otomatis coba menolak permintaan kuki di spanduk kuki.</string>
+    <!-- Text for indicating cookie banner handling is off this site, this is shown as part of the protections panel with the tracking protection toggle -->
+    <string name="reduce_cookie_banner_off_for_site">Nonaktif untuk situs ini</string>
+    <!-- Text for indicating cookie banner handling is on this site, this is shown as part of the protections panel with the tracking protection toggle -->
+    <string name="reduce_cookie_banner_on_for_site">Aktif untuk situs ini</string>
+
+    <!-- Text for indicating cookie banner handling is currently not supported for this site, this is shown as part of the protections panel with the tracking protection toggle -->
+    <string name="reduce_cookie_banner_unsupported_site" tools:ignore="UnusedResources">Saat ini, situs tidak didukung</string>
+    <!-- Title text for a detail explanation indicating cookie banner handling is on this site, this is shown as part of the cookie banner panel in the toolbar. The first parameter is a shortened URL of the current site-->
+    <string name="reduce_cookie_banner_details_panel_title_on_for_site">Aktifkan Pengurangan Spanduk Kuki untuk %1$s?</string>
+    <!-- Title text for a detail explanation indicating cookie banner handling is off this site, this is shown as part of the cookie banner panel in the toolbar. The first parameter is a shortened URL of the current site-->
+    <string name="reduce_cookie_banner_details_panel_title_off_for_site">Nonaktifkan Pengurangan Spanduk Kuki untuk %1$s?</string>
+    <!-- Long text for a detail explanation indicating what will happen if cookie banner handling is off for a site, this is shown as part of the cookie banner panel in the toolbar. The first parameter is the application name -->
+    <string name="reduce_cookie_banner_details_panel_description_off_for_site">%1$s akan menghapus kuki situs ini dan menyegarkan laman ini. Membersihkan semua kuki dapat membuat Anda keluar dari suatu situs atau mengosongkan keranjang belanja.</string>
+    <!-- Long text for a detail explanation indicating what will happen if cookie banner handling is on for a site, this is shown as part of the cookie banner panel in the toolbar. The first and second parameter are the application name -->
+    <string name="reduce_cookie_banner_details_panel_description_on_for_site" moz:RemovedIn="110" tools:ignore="UnusedResources">%1$s dapat mencoba menolak permintaan kuki secara otomatis. Jika opsi menolak tidak tersedia, %2$s dapat menerima semua kuki untuk menutup spanduk tersebut.</string>
+
+    <!-- Long text for a detail explanation indicating what will happen if cookie banner handling is on for a site, this is shown as part of the cookie banner panel in the toolbar. The first parameter are the application name -->
+    <string name="reduce_cookie_banner_details_panel_description_on_for_site_1" moz:RemovedIn="111" tools:ignore="UnusedResources">%1$s dapat mencoba menolak permintaan kuki secara otomatis.</string>
+    <!-- Long text for a detail explanation indicating what will happen if cookie banner handling is on for a site, this is shown as part of the cookie banner panel in the toolbar. The first parameter is the application name -->
+    <string name="reduce_cookie_banner_details_panel_description_on_for_site_2">%1$s mencoba secara otomatis menolak semua permintaan kuki di situs yang didukung.</string>
+    <!-- Title text for the dialog use on the control branch of the experiment to determine which context users engaged the most -->
+    <string name="reduce_cookie_banner_control_experiment_dialog_title">Lenyapkan spanduk kuki!</string>
+    <!-- Body text for the dialog use on the control branch of the experiment to determine which context users engaged the most -->
+    <string name="reduce_cookie_banner_control_experiment_dialog_body" moz:RemovedIn="110" tools:ignore="UnusedResources">Secara otomatis menolak permintaan kuki, jika memungkinkan. Jika tidak, terima semua kuki untuk menghilangkan spanduk kuki.</string>
+    <!-- Body text for the dialog use on the control branch of the experiment to determine which context users engaged the most -->
+    <string name="reduce_cookie_banner_control_experiment_dialog_body_1" moz:RemovedIn="111" tools:ignore="UnusedResources">Secara otomatis menolak permintaan kuki, jika memungkinkan.</string>
+    <!-- Body text for the dialog use on the control branch of the experiment to determine which context users engaged the most.The first parameter is the application name -->
+    <string name="reduce_cookie_banner_control_experiment_dialog_body_2">Izinkan %1$s untuk secara otomatis menolak permintaan kuki?</string>
+    <!-- Remind me later text button for the onboarding dialog -->
+    <string name="reduce_cookie_banner_dialog_not_now_button">Jangan sekarang</string>
+    <!-- Change setting text button, for the dialog use on the control branch of the experiment to determine which context users engaged the most -->
+    <string name="reduce_cookie_banner_control_experiment_dialog_change_setting_button">Tutup spanduk</string>
+    <!-- Snack text for the cookie banner dialog, after user hit the dismiss banner button -->
+    <string name="reduce_cookie_banner_dialog_snackbar_text">Anda akan melihat lebih sedikit permintaan kuki</string>
+    <!-- Title text for the dialog use on the variant 1 branch of the experiment to determine which context users engaged the most -->
+    <string name="reduce_cookie_banner_variant_1_experiment_dialog_title">Lihat lebih sedikit pop-up kuki</string>
+    <!-- Body text for the dialog use on the variant 1 branch of the experiment to determine which context users engaged the most. The first parameter is the application name. -->
+    <string name="reduce_cookie_banner_variant_1_experiment_dialog_body" moz:RemovedIn="110" tools:ignore="UnusedResources">Otomatis menjawab pop-up kuki untuk mendapatkan penjelajahan bebas gangguan. %1$s akan menolak semua permintaan kuki jika memungkinkan, atau menerima semua jika tidak.</string>
+    <!-- Body text for the dialog use on the variant 1 branch of the experiment to determine which context users engaged the most. The first parameter is the application name. -->
+    <string name="reduce_cookie_banner_variant_1_experiment_dialog_body_1">Otomatis menjawab pop-up kuki untuk mendapatkan penjelajahan bebas gangguan. %1$s akan menolak semua permintaan kuki jika memungkinkan.</string>
+    <!-- Change setting text button, for the onboarding dialog use on the variant 1 branch of the experiment to determine which context users engaged the most -->
+    <string name="reduce_cookie_banner_variant_1_experiment_dialog_change_setting_button">Tutup Pop-up</string>
+    <!-- Title text for the dialog use on the variant 2 branch of the experiment to determine which context users engaged the most -->
+    <string name="reduce_cookie_banner_variant_2_experiment_dialog_title">Pengurangan Spanduk Kuki</string>
+    <!-- Body text for the dialog use on the variant 2 branch of the experiment to determine which context users engaged the most. The first parameter is the application name. -->
+    <string name="reduce_cookie_banner_variant_2_experiment_dialog_body" moz:RemovedIn="110" tools:ignore="UnusedResources">Izinkan %1$s untuk menolak permintaan persetujuan kuki dari situs jika memungkinkan atau menerima akses kuki jika tidak dimungkinkan?</string>
+    <!-- Body text for the dialog use on the variant 2 branch of the experiment to determine which context users engaged the most. The first parameter is the application name. -->
+    <string name="reduce_cookie_banner_variant_2_experiment_dialog_body_1">Izinkan %1$s untuk menolak permintaan persetujuan kuki dari situs jika memungkinkan?</string>
+    <!-- Change setting text button, for the dialog use on the variant 2 branch of the experiment to determine which context users engaged the most -->
+    <string name="reduce_cookie_banner_variant_2_experiment_dialog_change_setting_button">Izinkan</string>
+
     <!-- Description of the preference to enable "HTTPS-Only" mode. -->
     <string name="preferences_https_only_summary">Secara otomatis mencoba terhubung ke situs menggunakan protokol enkripsi HTTPS untuk meningkatkan keamanan.</string>
     <!-- Summary of tracking protection preference if tracking protection is set to on -->
-    <string name="preferences_https_only_on">Nyala</string>
-    <!-- Summary of tracking protection preference if tracking protection is set to off -->
+    <string name="preferences_https_only_on" moz:removedIn="111" tools:ignore="UnusedResources">Nyala</string>
+    <!-- Summary of https only preference if https only is set to off -->
     <string name="preferences_https_only_off">Mati</string>
+    <!-- Summary of https only preference if https only is set to on in all tabs -->
+    <string name="preferences_https_only_on_all">Aktif di semua tab</string>
+    <!-- Summary of https only preference if https only is set to on in private tabs only -->
+    <string name="preferences_https_only_on_private">Aktif di tab pribadi</string>
     <!-- Text displayed that links to website containing documentation about "HTTPS-Only" mode -->
     <string name="preferences_http_only_learn_more">Pelajari lebih lanjut</string>
     <!-- Option for the https only setting -->
@@ -363,7 +466,7 @@
     <!-- Preference for settings related to visual options -->
     <string name="preferences_customize">Ubahsuai</string>
     <!-- Preference description for banner about signing in -->
-    <string name="preferences_sign_in_description">Sinkronkan markah, riwayat, dan lainnya dengan Akun Firefox Anda</string>
+    <string name="preferences_sign_in_description_2">Masuk untuk menyinkronkan tab, markah, sandi, dan yang lainnya.</string>
     <!-- Preference shown instead of account display name while account profile information isn't available yet. -->
     <string name="preferences_account_default_name">Firefox Account</string>
     <!-- Preference text for account title when there was an error syncing FxA -->
@@ -408,6 +511,11 @@
     <!-- Preference for notifications -->
     <string name="preferences_notifications">Notifikasi</string>
 
+    <!-- Summary for notification preference indicating notifications are allowed -->
+    <string name="notifications_allowed_summary">Diizinkan</string>
+    <!-- Summary for notification preference indicating notifications are not allowed -->
+    <string name="notifications_not_allowed_summary">Tidak diizinkan</string>
+
     <!-- Add-on Preferences -->
     <!-- Preference to customize the configured AMO (addons.mozilla.org) collection -->
     <string name="preferences_customize_amo_collection">Koleksi Pengaya ubahsuai</string>
@@ -430,9 +538,11 @@
     <!-- Title for the customize home screen section with recently visited. Recently visited is
     a section where users see a list of tabs that they have visited in the past few days -->
     <string name="customize_toggle_recently_visited">Baru dikunjungi</string>
-    <!-- Title for the customize home screen section with Pocket. -->
-    <string name="customize_toggle_pocket">Pocket</string>
 
+    <!-- Title for the customize home screen section with Pocket. -->
+    <string name="customize_toggle_pocket_2">Cerita yang menggugah pikiran</string>
+    <!-- Summary for the customize home screen section with Pocket. The first parameter is product name Pocket -->
+    <string name="customize_toggle_pocket_summary">Artikel diberdayakan oleh %s</string>
     <!-- Title for the customize home screen section with sponsored Pocket stories. -->
     <string name="customize_toggle_pocket_sponsored">Konten bersponsor</string>
     <!-- Title for the opening wallpaper settings screen -->
@@ -447,11 +557,29 @@
     <string name="wallpaper_updated_snackbar_message">Wallpaper diperbarui!</string>
     <!-- Snackbar label for action to view selected wallpaper -->
     <string name="wallpaper_updated_snackbar_action">Tampilkan</string>
-    <!-- Label for switch which toggles the "tap-to-switch" behavior on home screen logo -->
-    <string name="wallpaper_tap_to_change_switch_label_1">Ubah wallpaper dengan mengetuk logo beranda Firefox</string>
-    <!-- This is the accessibility content description for the wallpapers functionality. Users are
-    able to tap on the app logo in the home screen and can switch to different wallpapers by tapping. -->
-    <string name="wallpaper_logo_content_description">Logo Firefox - ubah wallpaper, tombol</string>
+    <!-- Snackbar message for when wallpaper couldn't be downloaded -->
+    <string name="wallpaper_download_error_snackbar_message">Tidak dapat mengunduh wallpaper</string>
+    <!-- Snackbar label for action to retry downloading the wallpaper -->
+    <string name="wallpaper_download_error_snackbar_action">Coba lagi</string>
+    <!-- Snackbar message for when wallpaper couldn't be selected because of the disk error -->
+    <string name="wallpaper_select_error_snackbar_message">Tidak dapat mengubah wallpaper</string>
+    <!-- Text displayed that links to website containing documentation about the "Limited Edition" wallpapers. -->
+    <string name="wallpaper_learn_more">Pelajari lebih lanjut</string>
+
+    <!-- Text for classic wallpapers title. The first parameter is the Firefox name. -->
+    <string name="wallpaper_classic_title">%s Klasik</string>
+    <!-- Text for limited edition wallpapers title. -->
+    <string name="wallpaper_limited_edition_title">Edisi Terbatas</string>
+    <!-- Description text for the limited edition wallpapers with learn more link. The first parameter is the learn more string defined in wallpaper_learn_more-->
+    <string name="wallpaper_limited_edition_description_with_learn_more">Koleksi Suara Independen baru. %s</string>
+    <!-- Description text for the limited edition wallpapers. -->
+    <string name="wallpaper_limited_edition_description">Koleksi Suara Independen baru.</string>
+    <!-- Wallpaper onboarding dialog header text. -->
+    <string name="wallpapers_onboarding_dialog_title_text">Coba berbagai ragam warna</string>
+    <!-- Wallpaper onboarding dialog body text. -->
+    <string name="wallpapers_onboarding_dialog_body_text">Pilih wallpaper yang cocok untuk Anda.</string>
+    <!-- Wallpaper onboarding dialog learn more button text. The button navigates to the wallpaper settings screen. -->
+    <string name="wallpapers_onboarding_dialog_explore_more_button_text">Telusuri lebih banyak wallpaper</string>
 
     <!-- Add-on Installation from AMO-->
     <!-- Error displayed when user attempts to install an add-on from AMO (addons.mozilla.org) that is not supported -->
@@ -535,9 +663,8 @@
     <string name="preference_experiments_summary_2">Izinkan Mozilla untuk memasang dan menjalankan kajian</string>
 
     <!-- Turn On Sync Preferences -->
-    <!-- Header of the Turn on Sync preference view -->
-    <string name="preferences_sync">Aktifkan Sinkronisasi</string>
-
+    <!-- Header of the Sync and save your data preference view -->
+    <string name="preferences_sync_2">Sinkronkan dan simpan data Anda</string>
     <!-- Preference for reconnecting to FxA sync -->
     <string name="preferences_sync_sign_in_to_reconnect">Masuk untuk menghubungkan ulang</string>
     <!-- Preference for removing FxA account -->
@@ -596,6 +723,17 @@
     <!-- Content description (not visible, for screen readers etc.): "Close button for library settings" -->
     <string name="content_description_close_button">Tutup</string>
 
+    <!-- Title to show in alert when a lot of tabs are to be opened
+    %d is a placeholder for the number of tabs that will be opened -->
+    <string name="open_all_warning_title">Buka %d tab?</string>
+    <!-- Message to warn users that a large number of tabs will be opened
+    %s will be replaced by app name. -->
+    <string name="open_all_warning_message">Membuka banyak tab seperti ini dapat memperlambat %s saat laman sedang dimuat. Yakin ingin melanjutkan?</string>
+    <!-- Dialog button text for confirming open all tabs -->
+    <string name="open_all_warning_confirm">Tab terbuka</string>
+    <!-- Dialog button text for canceling open all tabs -->
+    <string name="open_all_warning_cancel">Batal</string>
+
     <!-- Text to show users they have one site in the history group section of the History fragment.
     %d is a placeholder for the number of sites in the group. -->
     <string name="history_search_group_site">%d situs</string>
@@ -625,10 +763,6 @@
     <string name="tab_view_list">Daftar</string>
     <!-- Option for a grid tab view -->
     <string name="tab_view_grid">Grid</string>
-    <!-- Option for search term tab groups -->
-    <string name="tab_view_search_term_tab_groups">Cari grup</string>
-    <!-- Summary text for search term tab groups -->
-    <string name="tab_view_search_term_tab_groups_summary">Kelompokkan situs terkait bersama-sama</string>
     <!-- Title of preference that allows a user to auto close tabs after a specified amount of time -->
     <string name="preferences_close_tabs">Tutup tab</string>
     <!-- Option for auto closing tabs that will never auto close tabs, always allows user to manually close tabs -->
@@ -660,6 +794,13 @@
     <string name="close_tabs_after_one_week_summary">Tutup setelah satu pekan</string>
     <!-- Summary for tabs preference when auto closing tabs setting is set to auto close tabs after one month-->
     <string name="close_tabs_after_one_month_summary">Tutup setelah satu bulan</string>
+
+    <!-- Summary for homepage preference indicating always opening the homepage when re-opening the app -->
+    <string name="opening_screen_homepage_summary">Buka di beranda</string>
+    <!-- Summary for homepage preference indicating always opening the last-open tab when re-opening the app -->
+    <string name="opening_screen_last_tab_summary">Buka di tab terakhir</string>
+    <!-- Summary for homepage preference indicating opening the homepage when re-opening the app after four hours of inactivity -->
+    <string name="opening_screen_after_four_hours_of_inactivity_summary">Buka di beranda setelah empat jam</string>
 
     <!-- Inactive tabs -->
     <!-- Category header of a preference that allows a user to enable or disable the inactive tabs feature -->
@@ -732,8 +873,6 @@
     <string name="open_tabs_menu">Buka menu tab</string>
     <!-- Open tabs menu item to save tabs to collection -->
     <string name="tabs_menu_save_to_collection1">Simpan tab ke koleksi</string>
-    <!-- Content description (not visible, for screen readers etc.): Opens the tab menu when pressed -->
-    <string moz:RemovedIn="103" name="tab_menu" tools:ignore="UnusedResources">Menu tab</string>
     <!-- Text for the menu button to delete a collection -->
     <string name="collection_delete">Hapus koleksi</string>
     <!-- Text for the menu button to rename a collection -->
@@ -753,9 +892,6 @@
     <string name="delete_from_history">Hapus dari riwayat</string>
     <!-- Postfix for private WebApp titles, placeholder is replaced with app name -->
     <string name="pwa_site_controls_title_private">%1$s (Mode Privat)</string>
-
-    <!-- Title text for the normal tabs header in the tabs tray which are not part of any tab grouping. -->
-    <string name="tab_tray_header_title_1">Tab lainnya</string>
 
     <!-- History -->
     <!-- Text for the button to search all history -->
@@ -784,11 +920,6 @@
     <string name="history_older">Lebih lawas</string>
     <!-- Text shown when no history exists -->
     <string name="history_empty_message">Tidak ada riwayat di sini</string>
-
-    <!-- Text for the button inside History screen that opens Synced History screen. History that is coming from other devices -->
-    <string name="history_synced_from_other_devices">Disinkronkan dari perangkat lain</string>
-    <!-- The page title for browsing history coming from other devices. -->
-    <string name="history_from_other_devices">Dari perangkat lainnya</string>
 
     <!-- Downloads -->
     <!-- Text for the snackbar to confirm that multiple downloads items have been removed -->
@@ -840,6 +971,10 @@
     <string name="bookmark_menu_open_in_new_tab_button">Buka di tab baru</string>
     <!-- Bookmark overflow menu open in private tab button -->
     <string name="bookmark_menu_open_in_private_tab_button">Buka di tab pribadi</string>
+    <!-- Bookmark overflow menu open all in tabs button -->
+    <string name="bookmark_menu_open_all_in_tabs_button">Buka semua di tab baru</string>
+    <!-- Bookmark overflow menu open all in private tabs button -->
+    <string name="bookmark_menu_open_all_in_private_tabs_button">Buka semua di tab pribadi</string>
     <!-- Bookmark overflow menu delete button -->
     <string name="bookmark_menu_delete_button">Hapus</string>
     <!--Bookmark overflow menu save button -->
@@ -933,10 +1068,16 @@
     <string name="preference_exceptions">Kekecualian</string>
 
     <!-- Summary of tracking protection preference if tracking protection is set to on -->
-    <string name="tracking_protection_on">Aktif</string>
+    <string name="tracking_protection_on" moz:removedIn="111" tools:ignore="UnusedResources">Aktif</string>
     <!-- Summary of tracking protection preference if tracking protection is set to off -->
     <string name="tracking_protection_off">Nonaktif</string>
 
+    <!-- Summary of tracking protection preference if tracking protection is set to standard -->
+    <string name="tracking_protection_standard">Standar</string>
+    <!-- Summary of tracking protection preference if tracking protection is set to strict -->
+    <string name="tracking_protection_strict">Ketat</string>
+    <!-- Summary of tracking protection preference if tracking protection is set to custom -->
+    <string name="tracking_protection_custom">Khusus</string>
     <!-- Label for global setting that indicates that all video and audio autoplay is allowed -->
     <string name="preference_option_autoplay_allowed2">Izinkan audio dan video</string>
     <!-- Label for site specific setting that indicates that all video and audio autoplay is allowed -->
@@ -959,7 +1100,7 @@
     <string name="delete_browsing_data_quit_off">Nonaktif</string>
 
     <!-- Summary of studies preference if it is set to on -->
-    <string name="studies_on"></string>
+    <string name="studies_on">Aktif</string>
     <!-- Summary of studies data on quit preference if it is set to off -->
     <string name="studies_off">Mati</string>
 
@@ -1019,6 +1160,10 @@
     <!-- Content description (not visible, for screen readers etc.):
         "Share" button. Opens the share menu when pressed. -->
     <string name="share_button_content_description">Bagikan</string>
+    <!-- Text for the Save to PDF feature in the share menu -->
+    <string name="share_save_to_pdf">Simpan sebagai PDF</string>
+    <!-- Text for error message when generating a PDF file Text for error message when generating a PDF file. -->
+    <string name="unable_to_save_to_pdf_error">Gagal membuat PDF</string>
     <!-- Sub-header in the dialog to share a link to another sync device -->
     <string name="share_device_subheader">Kirim ke peranti</string>
     <!-- Sub-header in the dialog to share a link to an app from the full list -->
@@ -1029,10 +1174,10 @@
     <string name="share_copy_link_to_clipboard">Salin ke papan klip</string>
     <!-- Toast shown after copying link to clipboard -->
     <string name="toast_copy_link_to_clipboard">Tersalin ke papan klip</string>
-    <!-- An option from the three dot menu to into sync -->
-    <string name="sync_menu_sign_in">Masuk untuk menyinkronkan</string>
     <!-- An option from the share dialog to sign into sync -->
     <string name="sync_sign_in">Masuk ke Sync</string>
+     <!-- An option from the three dot menu to sync and save data -->
+    <string name="sync_menu_sync_and_save_data">Sinkronkan dan simpan data</string>
     <!-- An option from the share dialog to send link to all other sync devices -->
     <string name="sync_send_to_all">Kirim ke semua peranti</string>
     <!-- An option from the share dialog to reconnect to sync -->
@@ -1070,6 +1215,13 @@
     %1$s is a placeholder that will be replaced by the app name (Fenix). -->
     <string name="notification_default_browser_text">Jadikan %1$s sebagai peramban baku Anda</string>
 
+    <!-- Title shown in the notification that pops up to re-engage the user -->
+    <string name="notification_re_engagement_title">Coba penjelajahan pribadi</string>
+
+    <!-- Text shown in the notification that pops up to re-engage the user.
+    %1$s is a placeholder that will be replaced by the app name. -->
+    <string name="notification_re_engagement_text">Menjelajah tanpa kuki atau riwayat tersimpan di %1$s</string>
+
     <!-- Snackbar -->
     <!-- Text shown in snackbar when user deletes a collection -->
     <string name="snackbar_collection_deleted">Koleksi dihapus</string>
@@ -1081,8 +1233,6 @@
     <string name="snackbar_tabs_closed">Tab ditutup</string>
     <!-- Text shown in snackbar when user bookmarks a list of tabs -->
     <string name="snackbar_message_bookmarks_saved">Markah tersimpan!</string>
-    <!-- Text shown in snackbar when user adds a site to top sites -->
-    <string moz:RemovedIn="101" name="snackbar_added_to_top_sites" tools:ignore="UnusedResources">Ditambahkan ke situs teratas!</string>
     <!-- Text shown in snackbar when user adds a site to shortcuts -->
     <string name="snackbar_added_to_shortcuts">Ditambahkan ke pintasan!</string>
     <!-- Text shown in snackbar when user closes a private tab -->
@@ -1162,8 +1312,17 @@
     <!-- Action item in menu for the Delete browsing data on quit feature -->
     <string name="delete_browsing_data_on_quit_action">Keluar</string>
 
-    <!-- Dialog message to the user asking to delete browsing data. -->
-    <string name="delete_browsing_data_prompt_message">Ini akan menghapus semua data penjelajahan Anda.</string>
+    <!-- Title text of a delete browsing data dialog. -->
+    <string name="delete_history_prompt_title">Rentang waktu untuk menghapus</string>
+    <!-- Body text of a delete browsing data dialog. -->
+    <string name="delete_history_prompt_body">Menghapus riwayat (termasuk riwayat yang disinkronkan dari perangkat lain), kuki, dan data penjelajahan lainnya.</string>
+    <!-- Radio button in the delete browsing data dialog to delete history items for the last hour. -->
+    <string name="delete_history_prompt_button_last_hour">Jam terakhir</string>
+    <!-- Radio button in the delete browsing data dialog to delete history items for today and yesterday. -->
+    <string name="delete_history_prompt_button_today_and_yesterday">Hari ini dan kemarin</string>
+    <!-- Radio button in the delete browsing data dialog to delete all history. -->
+    <string name="delete_history_prompt_button_everything">Semuanya</string>
+
     <!-- Dialog message to the user asking to delete browsing data. Parameter will be replaced by app name. -->
     <string name="delete_browsing_data_prompt_message_3">%s akan menghapus data penjelajahan yang dipilih.</string>
     <!-- Text for the cancel button for the data deletion dialog -->
@@ -1176,8 +1335,8 @@
     <!-- Text for the snackbar to show the user that the deletion of browsing data is in progress -->
     <string name="deleting_browsing_data_in_progress">Menghapus data penjelajahan…</string>
 
-    <!-- Dialog message to the user asking to delete all history items inside the opened group. -->
-    <string name="delete_history_group_prompt_message">Ini akan menghapus semua item.</string>
+    <!-- Dialog message to the user asking to delete all history items inside the opened group. Parameter will be replaced by a history group name. -->
+    <string name="delete_all_history_group_prompt_message">Hapus semua situs di “%s”</string>
     <!-- Text for the cancel button for the history group deletion dialog -->
     <string name="delete_history_group_prompt_cancel">Batal</string>
     <!-- Text for the allow button for the history group dialog -->
@@ -1186,22 +1345,22 @@
     <string name="delete_history_group_snackbar">Grup dihapus</string>
 
     <!-- Onboarding -->
-    <!-- Text for onboarding welcome message
-    The first parameter is the name of the app (e.g. Firefox Preview) -->
-    <string name="onboarding_header">Selamat datang di %s!</string>
-
-    <!-- text for the Firefox account onboarding sign in card header. The word "Firefox" should not be translated -->
-    <string name="onboarding_account_sign_in_header_1">Sinkronkan Firefox antar perangkat</string>
-    <!-- Text for the button to learn more about signing in to your Firefox account. The first parameter is the name of the application.-->
-    <string name="onboarding_manual_sign_in_description_2">Bawa markah, riwayat, dan kata sandi ke %1$s di perangkat ini.</string>
-    <!-- text for the button to manually sign into Firefox account. -->
-    <string name="onboarding_firefox_account_sign_in_1">Daftar</string>
+    <!-- Text for onboarding welcome header. -->
+    <string name="onboarding_header_2">Selamat datang di Internet yang lebih baik</string>
+    <!-- Text for the onboarding welcome message. -->
+    <string name="onboarding_message">Peramban yang dibuat untuk masyarakat, bukan profit.</string>
+    <!-- Text for the Firefox account onboarding sign in card header. -->
+    <string name="onboarding_account_sign_in_header">Mulai dari situasi saat Anda pergi</string>
+    <!-- Text for the button to learn more about signing in to your Firefox account. -->
+    <string name="onboarding_manual_sign_in_description">Sinkronkan tab dan kata sandi di berbagai perangkat untuk peralihan layar yang mulus.</string>
+    <!-- Text for the button to manually sign into Firefox account. -->
+    <string name="onboarding_firefox_account_sign_in">Masuk</string>
     <!-- text to display in the snackbar once account is signed-in -->
     <string name="onboarding_firefox_account_sync_is_on">Sinkronisasi aktif</string>
-    <!-- text for the tracking protection onboarding card header -->
-    <string name="onboarding_tracking_protection_header_3">Privasi selalu aktif</string>
-    <!-- text for the tracking protection card description. The first parameter is the name of the application.-->
-    <string name="onboarding_tracking_protection_description_4">%1$s secara otomatis menghentikan perusahaan yang mengikuti Anda di web secara rahasia.</string>
+    <!-- Text for the tracking protection onboarding card header -->
+    <string name="onboarding_tracking_protection_header">Perlindungan privasi secara bawaan</string>
+    <!-- Text for the tracking protection card description. -->
+    <string name="onboarding_tracking_protection_description">Menghadirkan Perlindungan Kuki Total untuk mencegah pelacak gunakan kuki untuk menguntit Anda di web.</string>
     <!-- text for tracking protection radio button option for standard level of blocking -->
     <string name="onboarding_tracking_protection_standard_button_2">Standar (baku)</string>
     <!-- text for standard blocking option button description -->
@@ -1212,16 +1371,17 @@
     <string name="onboarding_tracking_protection_strict_button_description_3">Blokir lebih banyak pelacak sehingga laman dimuat lebih cepat, tetapi beberapa fungsionalitas pada laman mungkin rusak.</string>
     <!-- text for the toolbar position card header  -->
     <string name="onboarding_toolbar_placement_header_1">Pilih penempatan bilah alat Anda</string>
-    <!-- text for the toolbar position card description -->
-    <string name="onboarding_toolbar_placement_description_1">Letakkan bilah alat agar mudah dijangkau. Tetap di bawah, atau pindahkan ke atas.</string>
-    <!-- text for the privacy notice onboarding card header -->
-    <string name="onboarding_privacy_notice_header">Privasi Anda</string>
-    <!-- text for the privacy notice onboarding card description
-    The first parameter is the name of the app (e.g. Firefox Preview) Substitute %s for long browser name. -->
-    <string name="onboarding_privacy_notice_description2">Kami merancang %s agar Anda dapat mengendalikan apa saja yang Anda bagikan secara daring dan apa yang Anda bagikan kepada kami.</string>
+    <!-- Text for the toolbar position card description -->
+    <string name="onboarding_toolbar_placement_description">Simpan di bawah, atau pindahkan ke atas.</string>
+    <!-- Text for the privacy notice onboarding card header -->
+    <string name="onboarding_privacy_notice_header_1">Anda mengendalikan data Anda</string>
+    <!-- Text for the privacy notice onboarding card description. -->
+    <string name="onboarding_privacy_notice_description">Firefox memberi Anda kendali atas apa saja yang Anda bagikan secara daring dan apa yang Anda bagikan kepada kami.</string>
     <!-- Text for the button to read the privacy notice -->
     <string name="onboarding_privacy_notice_read_button">Pelajari pemberitahuan privasi kami</string>
 
+    <!-- Text for the conclusion onboarding message -->
+    <string name="onboarding_conclusion_header">Siap membuka Internet yang luar biasa?</string>
     <!-- text for the button to finish onboarding -->
     <string name="onboarding_finish">Mulai menjelajah</string>
 
@@ -1309,6 +1469,8 @@
     <string name="preference_enhanced_tracking_protection_custom_cookies_3">Semua kuki pihak ketiga (mungkin menyebabkan situs tidak bekerja)</string>
     <!-- Option for enhanced tracking protection for the custom protection settings for cookies-->
     <string name="preference_enhanced_tracking_protection_custom_cookies_4">Semua kuki (akan menyebabkan situs tidak bekerja)</string>
+    <!-- Option for enhanced tracking protection for the custom protection settings for cookies-->
+    <string name="preference_enhanced_tracking_protection_custom_cookies_5">Pisahkan kuki lintas situs</string>
     <!-- Preference for enhanced tracking protection for the custom protection settings for tracking content -->
     <string name="preference_enhanced_tracking_protection_custom_tracking_content">Pelacakan konten</string>
     <!-- Option for enhanced tracking protection for the custom protection settings for tracking content-->
@@ -1331,8 +1493,12 @@
     <string name="etp_social_media_trackers_description">Membatasi kemampuan jejaring sosial untuk melacak aktivitas penjelajahan Anda di Web.</string>
     <!-- Category of trackers (cross-site tracking cookies) that can be blocked by Enhanced Tracking Protection -->
     <string name="etp_cookies_title">Kuki Pelacakan Lintas Situs</string>
+    <!-- Category of trackers (cross-site tracking cookies) that can be blocked by Enhanced Tracking Protection -->
+    <string name="etp_cookies_title_2">Kuki Lintas Situs</string>
     <!-- Description of cross-site tracking cookies that can be blocked by Enhanced Tracking Protection -->
     <string name="etp_cookies_description">Memblokir kuki yang digunakan oleh jaringan iklan dan analitik untuk mengkompilasi data penjelajahan Anda di banyak situs.</string>
+    <!-- Description of cross-site tracking cookies that can be blocked by Enhanced Tracking Protection -->
+    <string name="etp_cookies_description_2">Perlindungan Kuki Total mengisolasi kuki ke situs yang Anda inginkan agar pelacak seperti jaringan iklan tidak dapat menggunakannya untuk mengikuti Anda di seluruh situs.</string>
     <!-- Category of trackers (cryptominers) that can be blocked by Enhanced Tracking Protection -->
     <string name="etp_cryptominers_title">Penambang Kripto</string>
     <!-- Description of cryptominers that can be blocked by Enhanced Tracking Protection -->
@@ -1588,8 +1754,6 @@
     <string name="addresses_edit_address">Edit alamat</string>
     <!-- Title of the "Manage addresses" screen -->
     <string name="addresses_manage_addresses">Kelola alamat</string>
-    <!-- The header for the full name of an address -->
-    <string moz:removedIn="102" name="addresses_full_name" tools:ignore="UnusedResources">Nama Lengkap</string>
     <!-- The header for the first name of an address -->
     <string name="addresses_first_name">Nama Depan</string>
     <!-- The header for the middle name of an address -->
@@ -1650,7 +1814,7 @@
     <!-- Placeholder text shown in the Search String TextField before a user enters text -->
     <string name="search_add_custom_engine_search_string_hint">String pencarian untuk digunakan</string>
     <!-- Description text for the Search String TextField. The %s is part of the string -->
-    <string formatted="false" name="search_add_custom_engine_search_string_example">Ganti kueir dengan “%s”. Contoh:\nhttps://www.google.com/search?q=%s</string>
+    <string name="search_add_custom_engine_search_string_example" formatted="false">Ganti kueir dengan “%s”. Contoh:\nhttps://www.google.com/search?q=%s</string>
 
     <!-- Accessibility description for the form in which details about the custom search engine are entered -->
     <string name="search_add_custom_engine_form_description">Rincian mesin pencari kustom</string>
@@ -1697,10 +1861,6 @@
     <string name="no_site_exceptions">Tidak ada pengecualian situs</string>
     <!-- Bookmark deletion confirmation -->
     <string name="bookmark_deletion_confirmation">Yakin akan menghapus markah ini?</string>
-    <!-- Browser menu button that adds a top site to the home fragment -->
-    <string moz:RemovedIn="101" name="browser_menu_add_to_top_sites" tools:ignore="UnusedResources">Tambah ke situs teratas</string>
-    <!-- Browser menu button that removes a top site from the home fragment -->
-    <string moz:RemovedIn="101" name="browser_menu_remove_from_top_sites" tools:ignore="UnusedResources">Hapus dari situs teratas</string>
     <!-- Browser menu button that adds a shortcut to the home fragment -->
     <string name="browser_menu_add_to_shortcuts">Tambahkan ke pintasan</string>
     <!-- Browser menu button that removes a shortcut from the home fragment -->
@@ -1777,12 +1937,8 @@
     <string name="synced_tabs_collapse_group">Ciutkan grup tab yang disinkronkan</string>
 
     <!-- Top Sites -->
-    <!-- Title text displayed in the dialog when top sites limit is reached. -->
-    <string moz:RemovedIn="101" name="top_sites_max_limit_title" tools:ignore="UnusedResources">Batas situs teratas tercapai</string>
     <!-- Title text displayed in the dialog when shortcuts limit is reached. -->
     <string name="shortcut_max_limit_title">Batas pintasan tercapai</string>
-    <!-- Content description text displayed in the dialog when top sites limit is reached. -->
-    <string moz:RemovedIn="101" name="top_sites_max_limit_content_2" tools:ignore="UnusedResources">Untuk menambahkan situs teratas, hapus salah satu. Tekan lama situs yang dimaksud dan pilih hapus.</string>
     <!-- Content description text displayed in the dialog when shortcut limit is reached. -->
     <string name="shortcut_max_limit_content">Untuk menambah pintasan baru, hapus salah satunya. Sentuh dan tahan situs dan pilih hapus.</string>
     <!-- Confirmation dialog button text when top sites limit is reached. -->
@@ -1792,8 +1948,6 @@
     <string name="top_sites_toggle_top_recent_sites_4">Pintasan</string>
 	<!-- Title text displayed in the rename top site dialog. -->
 	<string name="top_sites_rename_dialog_title">Nama</string>
-	<!-- Hint for renaming title of a top site -->
-	<string moz:RemovedIn="101" name="top_site_name_hint" tools:ignore="UnusedResources">Nama situs teratas</string>
     <!-- Hint for renaming title of a shortcut -->
     <string name="shortcut_name_hint">Nama pintasan</string>
 	<!-- Button caption to confirm the renaming of the top site. -->
@@ -1830,6 +1984,15 @@
     <!-- Text for the snackbar to confirm auto-close is enabled for inactive tabs -->
     <string name="inactive_tabs_auto_close_message_snackbar">Tutup-otomatis diaktifkan</string>
 
+    <!-- Awesome bar suggestion's headers -->
+    <!-- Search suggestions title for Firefox Suggest. -->
+    <string name="firefox_suggest_header">Saran Firefox</string>
+
+    <!-- Title for search suggestions when Google is the default search suggestion engine. -->
+    <string name="google_search_engine_suggestion_header">Pencarian Google</string>
+    <!-- Title for search suggestions when the default search suggestion engine is anything other than Google. The first parameter is default search engine name. -->
+    <string name="other_default_search_engine_suggestion_header">Pencarian %s</string>
+
     <!-- Default browser experiment -->
     <string name="default_browser_experiment_card_text">Setel tautan dari situs web, surel, dan pesan untuk secara otomatis dibuka di Firefox.</string>
 
@@ -1852,8 +2015,8 @@
     <string name="pocket_stories_categories_header">Cerita berdasarkan topik</string>
     <!-- Text of a button allowing users to access an external url for more Pocket recommendations. -->
     <string name="pocket_stories_placeholder_text">Temukan lebih banyak</string>
-    <!-- Title of an app feature. Smaller than a heading.-->
-    <string name="pocket_stories_feature_title">Diberdayakan oleh Pocket.</string>
+    <!-- Title of an app feature. Smaller than a heading. The first parameter is product name Pocket -->
+    <string name="pocket_stories_feature_title_2">Diberdayakan oleh %s.</string>
     <!-- Caption for describing a certain feature. The placeholder is for a clickable text (eg: Learn more) which will load an url in a new tab when clicked.  -->
     <string name="pocket_stories_feature_caption">Bagian dari keluarga Firefox. %s</string>
     <!-- Clickable text for opening an external link for more information about Pocket. -->
@@ -1866,4 +2029,14 @@
     <string name="experiments_snackbar">Aktifkan telemetri untuk mengirim data.</string>
     <!-- Snackbar button text to navigate to telemetry settings.-->
     <string name="experiments_snackbar_button">Buka pengaturan</string>
+
+    <!-- Accessibility services actions labels. These will be appended to accessibility actions like "Double tap to.." but not by or applications but by services like Talkback. -->
+    <!-- Action label for elements that can be collapsed if interacting with them. Talkback will append this to say "Double tap to collapse". -->
+    <string name="a11y_action_label_collapse">ciutkan</string>
+    <!-- Action label for elements that can be expanded if interacting with them. Talkback will append this to say "Double tap to expand". -->
+    <string name="a11y_action_label_expand">bentangkan</string>
+    <!-- Action label for links to a website containing documentation about a wallpaper collection. Talkback will append this to say "Double tap to open link to learn more about this collection". -->
+    <string name="a11y_action_label_wallpaper_collection_learn_more">buka tautan untuk mempelajari lebih lanjut tentang koleksi ini</string>
+    <!-- Action label for links that point to an article. Talkback will append this to say "Double tap to read the article". -->
+    <string name="a11y_action_label_read_article">baca artikel</string>
 </resources>
